@@ -7,19 +7,26 @@ import Playlists from "./playlists.js";
 import Playlist from "./playlist.js";
 
 function runSpotify() {
-  SpotifyService.getAuthToken().then(function (token) {
-    SpotifyService.getPlaylistWithTokenAndKeyword(token, "chill").then(
-      function (data) {
-        if (data) {
-          createPlaylists(data.playlists.items);
-          //console.log(data.playlists.items);
-        } else {
-          console.log("Still...WTF!?");
-        }
-      }
-    );
+  SpotifyService.getAuthToken().then(function (response) {
+    if (response.accessToken) {
+      SpotifyService.authToken = response.accessToken;
+      getPlaylists();
+    } else {
+      console.log("There's been an error...");
+    }
   });
 }
+
+const getPlaylists = () => {
+  //createPlaylists([]);
+  SpotifyService.getPlaylistWithKeyword("chill").then(function (data) {
+    if (data) {
+      createPlaylists(data.playlists.items);
+    } else {
+      console.log("Still...WTF!?");
+    }
+  });
+};
 
 const createPlaylists = (list) => {
   let playLists = new Playlists();
@@ -30,7 +37,16 @@ const createPlaylists = (list) => {
     }
     playLists.items.push(playList);
   });
-  console.log(playLists);
+  getRandomArtist(playLists.items[0]);
+};
+
+const getRandomArtist = (playlist) => {
+  console.log(playlist);
+  SpotifyService.getRandomArtistWithURL(playlist.tracks.href).then(function (
+    response
+  ) {
+    console.log(response.items[0].track.artists[0].name);
+  });
 };
 
 runSpotify();
