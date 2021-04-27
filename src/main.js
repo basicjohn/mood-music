@@ -16,6 +16,22 @@ let inputKeywords = ["devastated", "mournful", "heartbroken", "dark", "beleaguer
 //   sessionStorage.setItem("inputKeywords", inputKeywords);
 // }
 
+function embedPlaylist(playlistId) {
+  console.log(playlistId);
+  $('.spotify-player').html("");
+  $('.spotify-player').append(`
+    <h3>Set the mood with a playlist</h3>
+    <iframe
+      src="https://open.spotify.com/embed/playlist/${playlistId}"
+      width="100%"
+      height="750px"
+      frameborder="2"
+      allowtransparency="true"
+      allow="encrypted-media"
+      >
+    </iframe>`);
+}
+
 const createPlaylists = (list) => {
   let playLists = new Playlists();
   list.forEach(function (item) {
@@ -25,7 +41,10 @@ const createPlaylists = (list) => {
     }
     playLists.items.push(playList);
   });
-  console.log(playLists.items.random());
+  let randomNumber = Math.floor((Math.random()*10) + 1);
+  console.log(randomNumber);
+  console.log(playLists.items[randomNumber]);
+  return playLists.items[randomNumber].id;
 };
 // UI Logic
 $(document).ready(function () {
@@ -57,7 +76,10 @@ $(document).ready(function () {
     console.log(keyWord);
       SpotifyService.getPlaylistWithKeyword(keyWord).then(function (data) {
     if (!data.error) {
-      createPlaylists(data.playlists.items);
+      console.log(data);
+      let playlistId = createPlaylists(data.playlists.items);
+      console.log(playlistId);
+      embedPlaylist(playlistId);
     } else {
       console.log("Still...WTF!?");
     }
