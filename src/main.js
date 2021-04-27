@@ -39,7 +39,6 @@ let inputKeywords = ["devastated", "mournful", "heartbroken", "dark", "beleaguer
 
 // runSpotify();
 
-
 // UI Logic
 $(document).ready(function () {
   let rangeInput = $("#valenceRange").val();

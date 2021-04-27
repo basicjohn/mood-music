@@ -1,6 +1,8 @@
 var ClientOAuth2 = require("client-oauth2");
 
 export default class SpotifyService {
+  constructor() {}
+
   static getAuthToken() {
     var githubAuth = new ClientOAuth2({
       clientId: process.env.CLIENT_ID,
@@ -14,26 +16,44 @@ export default class SpotifyService {
         if (!user) {
           throw new Error(user.error);
         }
-        return user.data.access_token;
+
+        return user;
       })
       .catch((err) => console.log(err));
   }
-  static getPlaylistWithTokenAndKeyword(authToken, keyword) {
+  static getPlaylistWithKeyword(keyword) {
     return fetch(
-      `https://api.spotify.com/v1/browse/categories/${keyword}/playlists?country=US&limit=5`,
+      `https://api.spotify.com/v1/browse/categories/${keyword}/playlists?country=US&limit=10`,
       {
         headers: {
-          Authorization: `Bearer ${authToken}`,
+          Authorization: `Bearer ${this.authToken}`,
         },
       }
     )
       .then(function (response) {
         if (!response) {
-          throw new Error(response.status);
+          throw new Error(response);
         }
-        //console.log(`response: ${response.body}`);
+        //console.log(`response: ${response.body.json()}`);
         return response.json();
       })
       .catch((err) => console.log(`err = ${err}`));
+  }
+
+  static getRandomArtistWithURL(url) {
+    return fetch(url, {
+      headers: {
+        Authorization: `Bearer ${this.authToken}`,
+      },
+    })
+      .then(function (response) {
+        if (!response.ok) {
+          throw new Error(response);
+        }
+        return response.json();
+      })
+      .catch(function (error) {
+        return error;
+      });
   }
 }
