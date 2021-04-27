@@ -20,7 +20,7 @@ export default class SpotifyService {
   }
   static getPlaylistWithTokenAndKeyword(authToken, keyword) {
     return fetch(
-      `https://api.spotify.com/v1/browse/categories/${keyword}/playlists?country=US&limit=5`,
+      `https://api.spotify.com/v1/browse/categories/${keyword}/playlists?country=US&limit=10`,
       {
         headers: {
           Authorization: `Bearer ${authToken}`,
