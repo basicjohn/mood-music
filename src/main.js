@@ -6,6 +6,10 @@ import SpotifyService from "./spotify-service.js";
 import Playlists from "./playlists.js";
 import Playlist from "./playlist.js";
 
+Array.prototype.random = function () {
+  return this[Math.floor(Math.random() * this.length)];
+};
+
 function runSpotify() {
   SpotifyService.getAuthToken().then(function (response) {
     if (response.accessToken) {
@@ -37,15 +41,15 @@ const createPlaylists = (list) => {
     }
     playLists.items.push(playList);
   });
-  getRandomArtist(playLists.items[0]);
+  getRandomArtist(playLists.items.random());
 };
 
 const getRandomArtist = (playlist) => {
-  console.log(playlist);
+  //console.log(playlist);
   SpotifyService.getRandomArtistWithURL(playlist.tracks.href).then(function (
     response
   ) {
-    console.log(response.items[0].track.artists[0].name);
+    console.log(response.items.random().track.artists.random().name);
   });
 };
 

@@ -4,6 +4,6 @@ export default class Playlists {
   }
 
   getRandonPlaylists() {
-    return this.items[Math.floor(Math.random()) * this.items.length];
+    return this.items.random();
   }
 }
