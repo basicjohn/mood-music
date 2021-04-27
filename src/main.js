@@ -11,6 +11,16 @@ function storeKeywords() {
   sessionStorage.setItem("inputKeywords", inputKeywords);
 }
 
+function getKeyword(inputKeyword) {
+  let spotifyKeywords = sessionStorage.getItem(spotifyKeywords);
+  let inputKeywords = sessionStorage.getItem(inputKeywords)
+  for (i = 0; i < spotifyKeywords.length; i++) {
+    if (inputKeywords[i].includes(inputKeyword)) {
+      return spotifyKeywords[i];
+    }
+  }
+}
+
 function runSpotify() {
   SpotifyService.getAuthToken().then(function (token) {
     SpotifyService.getPlaylistWithTokenAndKeyword(token, "chill").then(
