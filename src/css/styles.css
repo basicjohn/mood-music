@@ -30,7 +30,7 @@ span.yellow {
 h2 {
   padding-left: 25px;
   padding-bottom: 0px;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
 }
 #form-wrapper {
   margin-top: 25px;
@@ -53,4 +53,23 @@ form label {
 .slider {
   width: 100%;
 }
+.spotify-player {
+  padding-top: 25px;
+}
 
+/* Mobile Styles */
+@media only screen and (max-width: 600px) {
+  
+  header {
+    padding-top: 20px;
+  }
+  h1 {
+    padding-left: 5px;
+  }
+  h2 {
+    padding-left: 5px;
+  }
+  #form-wrapper p {
+    font-size: 60px;
+  }
+}
