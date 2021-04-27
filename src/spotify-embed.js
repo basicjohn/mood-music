@@ -1,6 +1,6 @@
 export default class Embed {
   embed(uri) {
-    return embedScript = `<iframe src="https://open.spotify.com/embed/${uri}" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>`
+    return `<iframe src="https://open.spotify.com/embed/${uri}" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>`
   }
 }
 
