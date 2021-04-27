@@ -4,10 +4,11 @@ Accent Yellow : #fdab22 */
 
 body{
   background-color: #f7f7f7;
-}
+  color: #323232;
 
+}
 header {
-  padding-top: 75px;
+  padding-top: 50px;
   background-color: #fff;
   border-bottom: 1px;
   border-style: solid;
@@ -16,7 +17,6 @@ header {
 .container {
   padding: 25px;
 }
-
 h1 {
   color: #323232;
   font-size: 68px;
@@ -24,35 +24,33 @@ h1 {
   background-color: #fff;
   padding-left: 25px;
 }
-
 span.yellow {
   color: #fdab22;
 }
-
 h2 {
   padding-left: 25px;
   padding-bottom: 0px;
   margin-bottom: 50px;
 }
-
 #form-wrapper {
   margin-top: 25px;
 }
-
 .btn {
   margin-top: 25px;
 }
-
 #form-wrapper {
   text-align: center;
 }
-
 #form-wrapper p {
-  font-size: 90px;
-  font-weight: 700;
+  font-size: 125px;
+  font-weight: 800;
   text-align: center;
 }
-
+form label {
+  font-weight: 800;
+    color: #fdab22;
+}
 .slider {
   width: 100%;
 }
+
