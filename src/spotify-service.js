@@ -32,9 +32,9 @@ export default class SpotifyService {
     )
       .then(function (response) {
         if (!response) {
-          throw new Error(response.status);
+          throw new Error(response);
         }
-        //console.log(`response: ${response.body}`);
+        //console.log(`response: ${response.body.json()}`);
         return response.json();
       })
       .catch((err) => console.log(`err = ${err}`));
