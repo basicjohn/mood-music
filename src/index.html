@@ -4,11 +4,51 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Mood Music</title>
   </head>
   <body>
-    <div class="container">
-   
-    </div>
+    <header>
+      <h1></h1>
+
+    </header>
+    <main class="container">
+      <div class="row" id="form1">
+        <form>
+          <input class="form-control" type="text" placeholder="Default input" />
+          <label for="valenceRange"
+            >On a scale of 0 to 10. 0 being very negative & 10 being very
+            Positive</label
+          >
+          <input
+            type="range"
+            min="1"
+            max="100"
+            value="50"
+            class="slider"
+            id="valenceRange"
+          />
+          <button type="button">Submit</button>
+        </form>
+      </div>
+      <div class="row" id="form2">
+        <div class="form-check">
+          <form>
+            <input
+              class="form-check-input"
+              type="checkbox"
+              value=""
+              id="devastated"
+            />
+            <label class="form-check-label" for="devastated">
+              devastated
+            </label>
+            <button type="button">Create Playlist</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="spotify-player"></div>
+    </main>
+    <footer></footer>
   </body>
 </html>
