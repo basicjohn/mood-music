@@ -1,0 +1,58 @@
+/* Style guide: 
+Dark Grey : #323232
+Accent Yellow : #fdab22 */
+
+body{
+  background-color: #f7f7f7;
+}
+
+header {
+  padding-top: 75px;
+  background-color: #fff;
+  border-bottom: 1px;
+  border-style: solid;
+  border-color: #c8c8c8;
+}
+.container {
+  padding: 25px;
+}
+
+h1 {
+  color: #323232;
+  font-size: 68px;
+  font-weight: 700;
+  background-color: #fff;
+  padding-left: 25px;
+}
+
+span.yellow {
+  color: #fdab22;
+}
+
+h2 {
+  padding-left: 25px;
+  padding-bottom: 0px;
+  margin-bottom: 50px;
+}
+
+#form-wrapper {
+  margin-top: 25px;
+}
+
+.btn {
+  margin-top: 25px;
+}
+
+#form-wrapper {
+  text-align: center;
+}
+
+#form-wrapper p {
+  font-size: 90px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.slider {
+  width: 100%;
+}
