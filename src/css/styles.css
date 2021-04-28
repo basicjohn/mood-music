@@ -4,16 +4,17 @@ Accent Yellow : #fdab22 */
 
 :root {
   --main-color: #fdab22;
+  --dark-grey: #323232;
+  --light-grey: #f7f7f7;
 }
 
-@import "colors.css";
 body {
   background-color: #f7f7f7;
   color: #323232;
 }
 header {
   padding-top: 50px;
-  background-color: #fff;
+  background-color: white;
   border-width: 0px 0px 1px 0px;
   border-style: solid;
   border-color: #c8c8c8;
@@ -22,10 +23,10 @@ header {
   padding: 25px;
 }
 h1 {
-  color: #323232;
+  color: var(--dark-grey);
   font-size: 68px;
   font-weight: 700;
-  background-color: #fff;
+  background-color: white;
   padding-left: 25px;
 }
 span.yellow {
@@ -67,15 +68,12 @@ form label {
   width: 100%;
   background: transparent;
 }
-
 .slider::-webkit-slider-thumb {
   -webkit-appearance: none;
 }
-
 .slider:focus {
   outline: none;
 }
-
 .slider::-ms-track {
   width: 100%;
   cursor: pointer;
@@ -87,7 +85,7 @@ form label {
 /* Slider styling for Webkit */
 .slider::-webkit-slider-thumb {
   -webkit-appearance: none;
-  border: 1px solid #9b8769;
+  border: 2px solid var(--dark-grey);
   height: 18px;
   width: 18px;
   border-radius: 25px;
@@ -101,17 +99,17 @@ form label {
   height: 2px;
   cursor: pointer;
   animation: 0.2s;
-  box-shadow: 0 #000000;
+  box-shadow: 0 var(--dark-grey);
   background: #838383;
   border-radius: 0px;
-  border: 0 solid #000000;
+  border: 0 solid var(--dark-grey);
 }
 .slider:focus::-webkit-slider-runnable-track {
   background: #9b8769;
   height: 2px;
-  box-shadow: 0 #000000;
+  box-shadow: 0 var(--dark-grey);
   border-radius: 0;
-  border: 0 solid #000000;
+  border: 0 solid var(--dark-grey);
 }
 
 /* Slider styling for Firefox */
@@ -128,16 +126,16 @@ form label {
   height: 3px;
   cursor: pointer;
   animation: 0.2s;
-  box-shadow: 0 0 0 #000000;
-  background: #838383;
+  box-shadow: 0 0 0 var(--dark-grey);
+  background: var(--dark-grey);
   border-radius: 0px;
-  border: 0 solid #000000;
+  border: 0 solid var(--dark-grey);
 }
 
 /* Slider styling for IE */
 .slider::-ms-thumb {
   margin-top: 1px;
-  border: 1px solid #9b8769;
+  border: 2px solid var(--dark-grey);
   height: 18px;
   width: 18px;
   border-radius: 25px;
@@ -154,22 +152,48 @@ form label {
   color: transparent;
 }
 .slider::-ms-fill-lower {
-  background: #838383;
-  border: 0 solid #000000;
+  background: var(--dark-grey);
+  border: 0 solid var(--dark-grey);
   border-radius: 0px;
-  box-shadow: 0 0 0 #000000;
+  box-shadow: 0 0 0 var(--dark-grey);
 }
 .slider::-ms-fill-upper {
-  background: #838383;
-  border: 0 solid #000000;
+  background: var(--dark-grey);
+  border: 0 solid var(--dark-grey);
   border-radius: 0px;
-  box-shadow: 0 0 0 #000000;
+  box-shadow: 0 0 0 var(--dark-grey);
 }
 .slider:focus::-ms-fill-lower {
-  background: #838383;
+  background: var(--dark-grey);
 }
 .slider:focus::-ms-fill-upper {
-  background: #838383;
+  background: var(--dark-grey);
+}
+
+/* Ouput Section Styles */
+#mood-outputs {
+  background-color: var(--main-color); 
+}
+
+
+/* Footer Styles */
+footer {
+  text-align: center;
+}
+
+#contributors {
+  list-style-type: none;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#contributors li {
+  float: left;
+  margin-right: 15px;
+}
+
+#contributors li a {
+  color: var(--main-color);
 }
 
 /* Tablet Styles */
