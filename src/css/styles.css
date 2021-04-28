@@ -54,7 +54,7 @@ form label {
   padding-top: 25px;
 }
 
-/* Slider Styles */
+/* Unstyled slider inputs */
 .slider {
   -webkit-appearance: none;
   width: 100%;
@@ -77,6 +77,18 @@ form label {
   color: transparent;
 }
 
+/* Slider styling for Webkit */
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  border: 1px solid #000000;
+  height: 18px;
+  width: 18px;
+  border-radius: 25px;
+  background: #000000;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -8px;
+}
 
 
 /* Tablet Styles */
