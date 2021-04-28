@@ -1,48 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mood Music</title>
-  </head>
-  <body>
-    <header>
-      <div class="container">
-        <h1>Mood Music<span class="yellow">.</span></h1>
-        <h2>
-          Find media that's right for your mood<span class="yellow">.</span>
-        </h2>
-      </div>
-    </header>
-    <main>
-      <div class="container">
-        <div class="row" id="form-wrapper">
-          <div class="col-md-12">
-            <form>
-              <p><span id="valenceOutput">Happy</span></p>
-              <label for="valenceRange"><span>Find Your Mood </span> </label
-              ><br />
-              <input
-                type="range"
-                min="0"
-                max="48"
-                class="slider"
-                id="valenceRange"
-              /><br />
-              <button id="find" class="btn btn-dark" type="button">
-                Find Playlist
-              </button>
-            </form>
-            <hr />
-          </div>
-        </div>
-        <div class="row">
-          <div class="spotify-player col-md-6"></div>
-          <div class="media-recommendations col-md-6"></div>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mood Music</title>
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <h1>Mood Music<span class="yellow">.</span></h1>
+      <h2>
+        Find media that's right for your mood<span class="yellow">.</span>
+      </h2>
+    </div>
+  </header>
+  <main>
+    <div class="container">
+      <div class="row" id="form-wrapper">
+        <div class="col-md-12">
+          <form>
+            <p><span id="valenceOutput">Happy</span></p>
+            <label for="valenceRange"><span>Find Your Mood </span> </label><br />
+            <input type="range" min="0" max="48" class="slider" id="valenceRange" /><br />
+            <button id="find" class="btn btn-dark" type="button">
+              Find Playlist
+            </button>
+          </form>
+          <hr />
         </div>
       </div>
-    </main>
-    <footer></footer>
-  </body>
+      <div class="row">
+        <div class="spotify-player col-md-6"></div>
+        <div class="media-recommendations col-md-6"></div>
+      </div>
+    </div>
+  </main>
+  <footer></footer>
+</body>
+
 </html>
