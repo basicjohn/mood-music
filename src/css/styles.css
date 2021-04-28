@@ -50,12 +50,34 @@ form label {
   font-weight: 800;
   color: #fdab22;
 }
-.slider {
-  width: 100%;
-}
 .spotify-player {
   padding-top: 25px;
 }
+
+/* Slider Styles */
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  background: transparent; 
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+}
+
+.slider:focus {
+  outline: none;
+}
+
+.slider::-ms-track {
+  width: 100%;
+  cursor: pointer;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+
+
 
 /* Tablet Styles */
 @media only screen and (max-width: 996px) {
@@ -88,3 +110,4 @@ form label {
     font-size: 60px;
   }
 }
+
