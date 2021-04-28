@@ -223,11 +223,13 @@ $(document).ready(function () {
 
   $(document).on("input", "#valenceRange", function () {
     sliderIndex = $(this).val() - 1;
+    console.log(sliderIndex);
     $("#valenceOutput").html(inputKeywords[sliderIndex]);
     changeThemeColor(colorArray[sliderIndex]);
   });
 
   $("#find").on("click", () => {
+    console.log(colorArray.length, inputKeywords.length);
     const keyWord = spotifyKeywords[sliderIndex];
     SpotifyService.getPlaylistWithKeyword(keyWord).then(function (data) {
       if (data instanceof Error === false) {
