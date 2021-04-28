@@ -2,14 +2,9 @@ import $ from "jquery";
 import "bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./css/styles.css";
-<<<<<<< HEAD
 import SpotifyService from "./spotify-service";
 import Playlists from "./playlists.js";
 import Playlist from "./playlist.js";
-=======
-import SpotifyService from "./spotify-service.js";
-import TasteDiveService from "./taste-dive-service";
->>>>>>> ag-branch
 
 let spotifyKeywords = [
   "devastated",
