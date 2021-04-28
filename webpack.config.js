@@ -16,11 +16,11 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      title: 'Template Environment',
+      title: 'moodmusic',
       template: './src/index.html',
       inject: 'body'
     }),
-     new Dotenv(),
+    new Dotenv(),
   ],
   module: {
     rules: [
