@@ -14,7 +14,7 @@ body {
 }
 header {
   padding-top: 50px;
-  background-color: #fff;
+  background-color: white;
   border-width: 0px 0px 1px 0px;
   border-style: solid;
   border-color: #c8c8c8;
@@ -26,7 +26,7 @@ h1 {
   color: var(--dark-grey);
   font-size: 68px;
   font-weight: 700;
-  background-color: #fff;
+  background-color: white;
   padding-left: 25px;
 }
 span.yellow {
@@ -85,7 +85,7 @@ form label {
 /* Slider styling for Webkit */
 .slider::-webkit-slider-thumb {
   -webkit-appearance: none;
-  border: 1px solid #9b8769;
+  border: 2px solid var(--dark-grey);
   height: 18px;
   width: 18px;
   border-radius: 25px;
@@ -127,7 +127,7 @@ form label {
   cursor: pointer;
   animation: 0.2s;
   box-shadow: 0 0 0 var(--dark-grey);
-  background: #838383;
+  background: var(--dark-grey);
   border-radius: 0px;
   border: 0 solid var(--dark-grey);
 }
@@ -135,7 +135,7 @@ form label {
 /* Slider styling for IE */
 .slider::-ms-thumb {
   margin-top: 1px;
-  border: 1px solid #9b8769;
+  border: 2px solid var(--dark-grey);
   height: 18px;
   width: 18px;
   border-radius: 25px;
@@ -152,27 +152,48 @@ form label {
   color: transparent;
 }
 .slider::-ms-fill-lower {
-  background: #838383;
+  background: var(--dark-grey);
   border: 0 solid var(--dark-grey);
   border-radius: 0px;
   box-shadow: 0 0 0 var(--dark-grey);
 }
 .slider::-ms-fill-upper {
-  background: #838383;
+  background: var(--dark-grey);
   border: 0 solid var(--dark-grey);
   border-radius: 0px;
   box-shadow: 0 0 0 var(--dark-grey);
 }
 .slider:focus::-ms-fill-lower {
-  background: #838383;
+  background: var(--dark-grey);
 }
 .slider:focus::-ms-fill-upper {
-  background: #838383;
+  background: var(--dark-grey);
 }
+
+/* Ouput Section Styles */
+#mood-outputs {
+  background-color: var(--main-color); 
+}
+
 
 /* Footer Styles */
 footer {
   text-align: center;
+}
+
+#contributors {
+  list-style-type: none;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#contributors li {
+  float: left;
+  margin-right: 15px;
+}
+
+#contributors li a {
+  color: var(--main-color);
 }
 
 /* Tablet Styles */
