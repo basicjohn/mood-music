@@ -19,7 +19,9 @@ export default class SpotifyService {
 
         return user;
       })
-      .catch((err) => console.log(err));
+      .catch(function (err) {
+        return err;
+      });
   }
   static getPlaylistWithKeyword(keyword) {
     return fetch(
@@ -37,7 +39,9 @@ export default class SpotifyService {
         //console.log(`response: ${response.body.json()}`);
         return response.json();
       })
-      .catch((err) => console.log(`err = ${err}`));
+      .catch(function (err) {
+        return err;
+      });
   }
 
   static getRandomArtistWithURL(url) {
