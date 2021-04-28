@@ -5,107 +5,7 @@ import "./css/styles.css";
 import SpotifyService from "./spotify-service";
 import Playlists from "./playlists.js";
 import Playlist from "./playlist.js";
-
-let spotifyKeywords = [
-  "devastated",
-  "coping",
-  "heartache",
-  "dark",
-  "boost",
-  "alone",
-  "spooky",
-  "crazy",
-  "stress",
-  "sad",
-  "tender",
-  "commute",
-  "cleaning",
-  "rainy day",
-  "focus",
-  "bed",
-  "beats",
-  "morning",
-  "wake up",
-  "work from home",
-  "coffeehouse",
-  "chill",
-  "porch",
-  "feels",
-  "good vibes",
-  "smile",
-  "ballads",
-  "caviar",
-  "warm",
-  "park",
-  "feel-good",
-  "date night",
-  "dinner",
-  "happy",
-  "greatest",
-  "perfect",
-  "wild",
-  "bad bitch",
-  "cardio",
-  "workout",
-  "gameday",
-  "tailgate",
-  "champs",
-  "beautiful",
-  "love",
-  "confidence",
-  "party",
-  "songs in the shower",
-];
-let inputKeywords = [
-  "devastated",
-  "mournful",
-  "heartbroken",
-  "dark",
-  "beleaguered",
-  "alone",
-  "scared",
-  "crazy",
-  "stressed",
-  "sad",
-  "tender",
-  "irritated",
-  "fastidious",
-  "bored",
-  "preoccupied",
-  "lazy",
-  "studious",
-  "sleepy",
-  "eager",
-  "busy",
-  "undercaffeinated",
-  "relaxed",
-  "curious",
-  "groovy",
-  "dreamy",
-  "playful",
-  "emotional",
-  "defiant",
-  "cute",
-  "cheerful",
-  "upbeat",
-  "sexy",
-  "nostalgiac",
-  "happy",
-  "timeless",
-  "perfect",
-  "adventurous",
-  "sassy",
-  "driven",
-  "hardcore",
-  "intense",
-  "territorial",
-  "triumphant",
-  "beautiful",
-  "amorous",
-  "confident",
-  "outgoing",
-  "euphoric",
-];
+import Constants from "./constants.js";
 
 // function storeKeywords() {
 //   let spotifyKeywords = ["devastated", "coping", "heartache", "dark", "boost", "alone", "spooky", "crazy", "stress", "sad", "tender", "commute", "cleaning", "rainy day", "focus", "bed", "beats", "morning", "wake up", "work from home", "coffeehouse", "chill", "porch", "feels", "good vibes", "smile", "ballads", "caviar", "warm", "park", "feel-good", "date night", "dinner", "happy", "greatest", "perfect", "wild", "bad bitch", "cardio", "workout", "gameday", "tailgate", "champs", "beautiful", "love", "confidence", "party", "songs in the shower"];
@@ -157,6 +57,7 @@ const changeThemeColor = (color) => {
   $("span").removeClass().addClass(color);
 };
 $(document).ready(function () {
+  let constants = new Constants();
   let sliderIndex = 0;
   let rangeInput = $("#valenceRange").val();
   $("#valenceOutput").text(rangeInput);
@@ -164,17 +65,17 @@ $(document).ready(function () {
 
   $(document).on("input", "#valenceRange", function () {
     sliderIndex = $(this).val() - 1;
-    $("#valenceOutput").html(inputKeywords[sliderIndex]);
-    $("#valenceOutput").removeClass().addClass(inputKeywords[sliderIndex]);
+    $("#valenceOutput").html(constants.inputKeywords[sliderIndex]);
+    $("#valenceOutput").removeClass().addClass(constants.inputKeywords[sliderIndex]);
   });
 
   $("#find").on("click", () => {
-    const keyWord = spotifyKeywords[sliderIndex];
+    const keyWord = constants.spotifyKeywords[sliderIndex];
     SpotifyService.getPlaylistWithKeyword(keyWord).then(function (data) {
       if (data instanceof Error === false) {
         let playlistId = createPlaylists(data.playlists.items);
         embedPlaylist(playlistId);
-        changeThemeColor(inputKeywords[sliderIndex]);
+        changeThemeColor(constants.inputKeywords[sliderIndex]);
       } else {
         console.log("Still...WTF!?");
       }
