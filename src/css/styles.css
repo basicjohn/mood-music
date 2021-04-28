@@ -82,7 +82,7 @@ form label {
   /* Slider styling for Webkit */
   .slider::-webkit-slider-thumb {
     -webkit-appearance: none;
-    border: 1px solid #fdab22;
+    border: 1px solid #9b8769;
     height: 18px;
     width: 18px;
     border-radius: 25px;
@@ -93,21 +93,25 @@ form label {
   }
   .slider::-webkit-slider-runnable-track {
     width: 100%;
-    height: 3px;
+    height: 2px;
     cursor: pointer;
     animation: 0.2s;
-    box-shadow: 0 0 0 #000000;
-    background: #D9D9D9;
-    border-radius: 1px;
+    box-shadow: 0 #000000;
+    background: #838383;
+    border-radius: 0px;
     border: 0 solid #000000;
   }
   .slider:focus::-webkit-slider-runnable-track {
-    background: #d9d9d9;
+    background: #9b8769;
+    height: 2px;
+    box-shadow: 0 #000000;
+    border-radius: 0;
+    border: 0 solid #000000;
   }
 
   /* Slider styling for Firefox */
   .slider::-moz-range-thumb {
-    border: 1px solid #fdab22;
+    border: 1px solid #9b8769;
     height: 18px;
     width: 18px;
     border-radius: 25px;
@@ -120,15 +124,15 @@ form label {
     cursor: pointer;
     animation: 0.2s;
     box-shadow: 0 0 0 #000000;
-    background: #d9d9d9;
-    border-radius: 1px;
+    background: #838383;
+    border-radius: 0px;
     border: 0 solid #000000;
   }
 
   /* Slider styling for IE */
   .slider::-ms-thumb {
     margin-top: 1px;
-    border: 1px solid #fdab22;
+    border: 1px solid #9b8769;
     height: 18px;
     width: 18px;
     border-radius: 25px;
@@ -145,22 +149,22 @@ form label {
     color: transparent;
   }
   .slider::-ms-fill-lower {
-    background: #d9d9d9;
+    background: #838383;
     border: 0 solid #000000;
-    border-radius: 2px;
+    border-radius: 0px;
     box-shadow: 0 0 0 #000000;
   }
   .slider::-ms-fill-upper {
-    background: #d9d9d9;
+    background: #838383;
     border: 0 solid #000000;
-    border-radius: 2px;
+    border-radius: 0px;
     box-shadow: 0 0 0 #000000;
   }
-  .slider::-ms-fill-lower {
-    background: #d9d9d9;
+  .slider:focus::-ms-fill-lower {
+    background: #838383;
   }
-  .slider::-ms-fill-upper {
-    background: #d9d9d9;
+  .slider:focus::-ms-fill-upper {
+    background: #838383;
   }
 
 /* Tablet Styles */
