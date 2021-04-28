@@ -54,42 +54,62 @@ form label {
   padding-top: 25px;
 }
 
-/* Unstyled slider inputs */
-.slider {
-  -webkit-appearance: none;
-  width: 100%;
-  background: transparent; 
-}
+/* Slider styling */
+  .slider {
+    -webkit-appearance: none;
+    width: 100%;
+    background: transparent; 
+  }
 
-.slider::-webkit-slider-thumb {
-  -webkit-appearance: none;
-}
+  .slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+  }
 
-.slider:focus {
-  outline: none;
-}
+  .slider:focus {
+    outline: none;
+  }
 
-.slider::-ms-track {
-  width: 100%;
-  cursor: pointer;
-  background: transparent;
-  border-color: transparent;
-  color: transparent;
-}
+  .slider::-ms-track {
+    width: 100%;
+    cursor: pointer;
+    background: transparent;
+    border-color: transparent;
+    color: transparent;
+  }
 
-/* Slider styling for Webkit */
-.slider::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  border: 1px solid #000000;
-  height: 18px;
-  width: 18px;
-  border-radius: 25px;
-  background: #000000;
-  cursor: pointer;
-  -webkit-appearance: none;
-  margin-top: -8px;
-}
+  /* Slider styling for Webkit */
+  .slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    border: 1px solid #000000;
+    height: 18px;
+    width: 18px;
+    border-radius: 25px;
+    background: #000000;
+    cursor: pointer;
+    -webkit-appearance: none;
+    margin-top: -8px;
+  }
 
+  /* Slider styling for Firefox */
+  .slider::-moz-range-thumb {
+    border: 1px solid #000000;
+    height: 18px;
+    width: 18px;
+    border-radius: 25px;
+    background: #000000;
+    cursor: pointer;
+  }
+
+  /* Slider styling for IE */
+  .slider::-ms-thumb {
+    margin-top: 1px;
+    border: 1px solid #000000;
+    height: 18px;
+    width: 18px;
+    border-radius: 25px;
+    background: #000000;
+    cursor:pointer;
+  }
 
 /* Tablet Styles */
 @media only screen and (max-width: 996px) {
