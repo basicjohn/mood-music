@@ -158,8 +158,9 @@ $(document).ready(function () {
   getAuthToken();
 
   $(document).on("input", "#valenceRange", function () {
-    $("#valenceOutput").html(inputKeywords[$(this).val()]);
-    sliderIndex = $(this).val();
+    sliderIndex = $(this).val() - 1;
+    $("#valenceOutput").html(inputKeywords[sliderIndex]);
+    $("#valenceOutput").removeClass().addClass(inputKeywords[sliderIndex]);
   });
 
   $("#find").on("click", () => {
