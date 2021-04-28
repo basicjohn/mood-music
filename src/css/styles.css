@@ -39,6 +39,7 @@ h2 {
 }
 #form-wrapper {
   margin-top: 25px;
+  margin-bottom: 25px;
 }
 .btn {
   margin-top: 25px;
@@ -173,6 +174,27 @@ form label {
 /* Ouput Section Styles */
 #mood-outputs {
   background-color: var(--main-color);
+  padding-top: 25px;
+  padding-bottom: 25px;
+  color: white;
+}
+
+#mood-outputs h2 {
+  padding: 0px;
+  margin: 0px;
+}
+
+#mood-outputs h2,
+.media-recommendations .row h3,
+#mood-outputs p {
+  text-align: center;
+}
+
+#mood-outputs hr {
+  border-top: white;
+  border-width: 1px;
+  border-style: solid;
+  width: 5%;
 }
 
 /* Footer Styles */
@@ -185,9 +207,12 @@ footer {
   margin-left: auto;
   margin-right: auto;
 }
+#contributors p {
+  margin: 0px;
+}
 
 #contributors li {
-  float: left;
+  display: inline;
   margin-right: 15px;
 }
 
