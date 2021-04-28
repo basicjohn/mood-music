@@ -6,6 +6,56 @@ import SpotifyService from "./spotify-service";
 import Playlists from "./playlists.js";
 import Playlist from "./playlist.js";
 
+const colorArray = [
+  "#0000",
+  "#01000a",
+  "#02c6f7",
+  "#04068a",
+  "#0444ba",
+  "#046b8a",
+  "#09f205",
+  "#118dfa",
+  "#127351",
+  "#192529",
+  "#1ac6d9",
+  "#2c9e52",
+  "#34e024",
+  "#3a1ad9",
+  "#48b6fa",
+  "#4b0a5c",
+  "#4d5254",
+  "#4e4c5c",
+  "#543333",
+  "#5badeb",
+  "#5f5b7d",
+  "#663a87",
+  "#6e122f",
+  "#7907fa",
+  "#93aaf5",
+  "#96ffcb",
+  "#990f1b",
+  "#a1bf1b",
+  "#a3eef0",
+  "#ac11fa",
+  "#b56353",
+  "#c20d04",
+  "#c9970c",
+  "#ced8db",
+  "#dbf0a3",
+  "#dc48fa",
+  "#e05f46",
+  "#e813d3",
+  "#eff70a",
+  "#f4f716",
+  "#f70a9c",
+  "#f7be02",
+  "#f7c1d0",
+  "#fa0000",
+  "#fc0a47",
+  "#fc7f0a",
+  "#ffe205",
+  "#ffff87",
+];
 let spotifyKeywords = [
   "devastated",
   "coping",
@@ -153,9 +203,18 @@ function embedPlaylist(playlistId) {
 }
 
 const changeThemeColor = (color) => {
-  console.log(color);
-  $("span").removeClass().addClass(color);
+  //console.log(color);
+  let theRules = new Array();
+  const styleSheet = document.styleSheets[1];
+  if (styleSheet.cssRules) {
+    theRules = document.styleSheets[1].cssRules;
+  } else if (styleSheet.rules) {
+    theRules = document.styleSheets[1].rules;
+  }
+  let rule = theRules[0].style;
+  rule.setProperty("--main-color", color);
 };
+
 $(document).ready(function () {
   let sliderIndex = 0;
   let rangeInput = $("#valenceRange").val();
@@ -165,7 +224,7 @@ $(document).ready(function () {
   $(document).on("input", "#valenceRange", function () {
     sliderIndex = $(this).val() - 1;
     $("#valenceOutput").html(inputKeywords[sliderIndex]);
-    $("#valenceOutput").removeClass().addClass(inputKeywords[sliderIndex]);
+    changeThemeColor(colorArray[sliderIndex]);
   });
 
   $("#find").on("click", () => {
@@ -174,7 +233,6 @@ $(document).ready(function () {
       if (data instanceof Error === false) {
         let playlistId = createPlaylists(data.playlists.items);
         embedPlaylist(playlistId);
-        changeThemeColor(inputKeywords[sliderIndex]);
       } else {
         console.log("Still...WTF!?");
       }

@@ -6,7 +6,6 @@ Accent Yellow : #fdab22 */
   --main-color: #fdab22;
 }
 
-@import "colors.css";
 body {
   background-color: #f7f7f7;
   color: #323232;
@@ -28,8 +27,9 @@ h1 {
   background-color: #fff;
   padding-left: 25px;
 }
-span.yellow {
-  color: #fdab22;
+
+span {
+  color: var(--main-color);
 }
 h2 {
   padding-left: 25px;
