@@ -114,21 +114,6 @@ let inputKeywords = [
 //   sessionStorage.setItem("inputKeywords", inputKeywords);
 // }
 
-function embedPlaylist(playlistId) {
-  $(".spotify-player").html("");
-  $(".spotify-player").append(`
-    <h3>Set the mood with a playlist</h3>
-    <iframe
-      src="https://open.spotify.com/embed/playlist/${playlistId}"
-      width="100%"
-      height="750px"
-      frameborder="2"
-      allowtransparency="true"
-      allow="encrypted-media"
-      >
-    </iframe>`);
-}
-
 // Helper logic
 const createPlaylists = (list) => {
   let playLists = new Playlists();
@@ -152,6 +137,20 @@ const getAuthToken = () => {
 };
 
 // UI Logic
+function embedPlaylist(playlistId) {
+  $(".spotify-player").html("");
+  $(".spotify-player").append(`
+    <h3>Set the mood with a playlist</h3>
+    <iframe
+      src="https://open.spotify.com/embed/playlist/${playlistId}"
+      width="100%"
+      height="750px"
+      frameborder="2"
+      allowtransparency="true"
+      allow="encrypted-media"
+      >
+    </iframe>`);
+}
 $(document).ready(function () {
   let sliderIndex = 0;
   let rangeInput = $("#valenceRange").val();
