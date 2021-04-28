@@ -129,6 +129,7 @@ function embedPlaylist(playlistId) {
     </iframe>`);
 }
 
+// Helper logic
 const createPlaylists = (list) => {
   let playLists = new Playlists();
   list.forEach(function (item) {
@@ -140,12 +141,7 @@ const createPlaylists = (list) => {
   });
   return playLists.items.random().id;
 };
-// UI Logic
-$(document).ready(function () {
-  let sliderIndex = 0;
-  let rangeInput = $("#valenceRange").val();
-  $("#valenceOutput").text(rangeInput);
-
+const getAuthToken = () => {
   SpotifyService.getAuthToken().then(function (data) {
     if (data instanceof Error === false) {
       SpotifyService.authToken = data.accessToken;
@@ -153,6 +149,14 @@ $(document).ready(function () {
       alert(`error: ${data.message}`);
     }
   });
+};
+
+// UI Logic
+$(document).ready(function () {
+  let sliderIndex = 0;
+  let rangeInput = $("#valenceRange").val();
+  $("#valenceOutput").text(rangeInput);
+  getAuthToken();
 
   $(document).on("input", "#valenceRange", function () {
     $("#valenceOutput").html(inputKeywords[$(this).val()]);
@@ -162,7 +166,7 @@ $(document).ready(function () {
   $("#find").on("click", () => {
     const keyWord = spotifyKeywords[sliderIndex];
     SpotifyService.getPlaylistWithKeyword(keyWord).then(function (data) {
-      if (!data.error) {
+      if (data instanceof Error === false) {
         let playlistId = createPlaylists(data.playlists.items);
         embedPlaylist(playlistId);
       } else {
