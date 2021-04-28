@@ -72,7 +72,7 @@ export default class Constants {
       "sleepy",
       "eager",
       "busy",
-      "undercaffeinated",
+      "caffeinated",
       "relaxed",
       "curious",
       "groovy",
