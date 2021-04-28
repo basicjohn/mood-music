@@ -151,6 +151,11 @@ function embedPlaylist(playlistId) {
       >
     </iframe>`);
 }
+
+const changeThemeColor = (color) => {
+  console.log(color);
+  $("span").removeClass().addClass(color);
+};
 $(document).ready(function () {
   let sliderIndex = 0;
   let rangeInput = $("#valenceRange").val();
@@ -158,8 +163,9 @@ $(document).ready(function () {
   getAuthToken();
 
   $(document).on("input", "#valenceRange", function () {
-    $("#valenceOutput").html(inputKeywords[$(this).val()]);
-    sliderIndex = $(this).val();
+    sliderIndex = $(this).val() - 1;
+    $("#valenceOutput").html(inputKeywords[sliderIndex]);
+    $("#valenceOutput").removeClass().addClass(inputKeywords[sliderIndex]);
   });
 
   $("#find").on("click", () => {
@@ -168,6 +174,7 @@ $(document).ready(function () {
       if (data instanceof Error === false) {
         let playlistId = createPlaylists(data.playlists.items);
         embedPlaylist(playlistId);
+        changeThemeColor(inputKeywords[sliderIndex]);
       } else {
         console.log("Still...WTF!?");
       }
