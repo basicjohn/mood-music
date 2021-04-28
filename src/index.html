@@ -8,42 +8,37 @@
   </head>
   <body>
     <header>
-      <h1></h1>
-
-    </header>
-    <main class="container">
-      <div class="row" id="form1">
-        <form>
-          <input class="form-control" type="text" placeholder="Default input" />
-          <label for="valenceRange"
-            >On a scale of 0 to 10. 0 being very negative & 10 being very
-            Positive</label
-          >
-          <input
-            type="range"
-            min="1"
-            max="100"
-            value="50"
-            class="slider"
-            id="valenceRange"
-          />
-          <button type="button">Submit</button>
-        </form>
+      <div class="container">
+        <h1>Mood Music<span class="yellow">.</span></h1>
+        <h2>
+          Find media that's right for your mood<span class="yellow">.</span>
+        </h2>
       </div>
-      <div class="row" id="form2">
-        <div class="form-check">
-          <form>
-            <input
-              class="form-check-input"
-              type="checkbox"
-              value=""
-              id="defaultCheck1"
-            />
-            <label class="form-check-label" for="defaultCheck1">
-              Default checkbox
-            </label>
-            <button type="button">Create Playlist</button>
-          </form>
+    </header>
+    <main>
+      <div class="container">
+        <div class="row" id="form-wrapper">
+          <div class="col-md-12">
+            <form>
+              <p><span id="valenceOutput">Happy</span></p>
+              <label for="valenceRange">Find Your Mood </label><br />
+              <input
+                type="range"
+                min="0"
+                max="48"
+                class="slider"
+                id="valenceRange"
+              /><br />
+              <button id="find" class="btn btn-dark" type="button">
+                Find Playlist
+              </button>
+            </form>
+            <hr />
+          </div>
+        </div>
+        <div class="row">
+          <div class="spotify-player col-md-6"></div>
+          <div class="media-recommendations col-md-6"></div>
         </div>
       </div>
     </main>
