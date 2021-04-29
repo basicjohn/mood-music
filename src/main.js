@@ -92,7 +92,7 @@ function getElements(response) {
   if (response instanceof Error) {
     console.log("Error", response);
   } else {
-    console.log(response.Similar.Results.random());
+    console.log(response.Similar.Results);
   }
 }
 
