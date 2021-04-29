@@ -6,6 +6,7 @@ Accent Yellow : #fdab22 */
   --main-color: #fdab22;
   --dark-grey: #323232;
   --light-grey: #f7f7f7;
+  --text-color: #a3eef0;
 }
 
 body {
@@ -81,6 +82,10 @@ form label {
   background: transparent;
   border-color: transparent;
   color: transparent;
+}
+
+.output-text {
+  color: var(--text-color);
 }
 
 /* Slider styling for Webkit */

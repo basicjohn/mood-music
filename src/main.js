@@ -45,7 +45,7 @@ function embedPlaylist(playlistId) {
     </iframe>`);
 }
 
-const changeThemeColor = (color) => {
+const changeThemeColor = (color, clicked) => {
   let theRules = new Array();
   const styleSheet = document.styleSheets[1];
   if (styleSheet.cssRules) {
@@ -54,7 +54,11 @@ const changeThemeColor = (color) => {
     theRules = document.styleSheets[1].rules;
   }
   let rule = theRules[0].style;
-  rule.setProperty("--main-color", color);
+  if (clicked) {
+    rule.setProperty("--main-color", color);
+  } else {
+    rule.setProperty("--text-color", color);
+  }
 };
 
 $(document).ready(function () {
@@ -67,7 +71,7 @@ $(document).ready(function () {
   $(document).on("input", "#valenceRange", function () {
     sliderIndex = $(this).val() - 1;
     $("#valenceOutput").html(constants.inputKeywords[sliderIndex]);
-    changeThemeColor(constants.colorArray[sliderIndex]);
+    changeThemeColor(constants.colorArray[sliderIndex], false);
   });
 
   $("#find").on("click", () => {
@@ -76,6 +80,7 @@ $(document).ready(function () {
       if (data instanceof Error === false) {
         let playlistId = createPlaylists(data.playlists.items);
         embedPlaylist(playlistId);
+        changeThemeColor(constants.colorArray[sliderIndex], true);
       } else {
         console.log("Still...WTF!?");
       }
