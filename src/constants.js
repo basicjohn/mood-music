@@ -51,7 +51,7 @@ export default class Constants {
       "The Tallest Man On Earth",
     ];
     this.colorArray = [
-      "#000000",
+      "#323232",
       "#56092D",
       "#2713BC",
       "#422FA8",
