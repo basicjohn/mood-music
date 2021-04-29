@@ -6,7 +6,7 @@ import SpotifyService from "./spotify-service";
 import Playlists from "./playlists.js";
 import Playlist from "./playlist.js";
 import Constants from "./constants.js";
-//import TasteDiveService from "./taste-dive-service";
+import TasteDiveService from "./taste-dive-service";
 // Helper logic
 const createPlaylists = (list) => {
   let playLists = new Playlists();
@@ -81,6 +81,7 @@ $(document).ready(function () {
         let playlistId = createPlaylists(data.playlists.items);
         embedPlaylist(playlistId);
         changeThemeColor(constants.colorArray[sliderIndex], true);
+        makeApiCall(constants.movieMoodTitles[sliderIndex]);
       } else {
         console.log("Still...WTF!?");
       }
@@ -88,17 +89,15 @@ $(document).ready(function () {
   });
 });
 
-// function getElements(response) {
-//   if (response.main) {
-//     console.log(response);
-//   } else {
-//     console.log("Error");
-//   }
-// }
+function getElements(response) {
+  if (response) {
+    console.log(response);
+  } else {
+    console.log("Error", response);
+  }
+}
 
-// async function makeApiCall(movieTitle) {
-//   const response = await TasteDiveService.getSimilarMovies(movieTitle);
-//   getElements(response);
-// }
-
-// makeApiCall(bookTitle);
+async function makeApiCall(movieTitle) {
+  const response = await TasteDiveService.getSimilarMovies(movieTitle);
+  getElements(response);
+}
