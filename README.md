@@ -11,7 +11,7 @@
 
 ## **Description**
 
-Mood Music is a playlist recommendation engine built with Spotify's Web API and TasteDive. It queries a user's mood with a range of emotions from negative to positive and returns a matching Spotify playlist alongside further book and movie recommendations provided by TasteDive. With Mood Music, you can find media that's right for your mood.
+Mood Media is a playlist recommendation engine built with Spotify's Web API and TasteDive. It queries a user's mood with a range of emotions from negative to positive and returns a matching Spotify playlist alongside further book and movie recommendations provided by TasteDive. With Mood Music, you can find media that's right for your mood.
 
 This team project was created during Week VII at [Epicodus](https://www.epicodus.com/), a coding bootcamp in Portland, Oregon.
 
@@ -42,6 +42,7 @@ This team project was created during Week VII at [Epicodus](https://www.epicodus
   2. Under ACCESS, click [request an access key](https://tastedive.com/account/api_access) and sign up for an account
   3. If prompted, complete your application profile and save
   4. Save the API access key to your .env
+  * Note: API calls to TasteDive will prompt an "Access-Control-Allow-Origin" error that cannot be addressed with a fetch parameter `mode: 'no-cors'`. It can be easily resolved with a Heroku proxy server as described in [this Stack Overflow answer](https://stackoverflow.com/questions/43262121/trying-to-use-fetch-and-pass-in-mode-no-cors)
 
 ## **Known Bugs**
 

@@ -16,7 +16,6 @@ export default class SpotifyService {
         if (!user) {
           throw new Error(user.error);
         }
-
         return user;
       })
       .catch(function (err) {

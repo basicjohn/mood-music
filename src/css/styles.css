@@ -2,13 +2,13 @@
 Dark Grey : #323232
 Accent Yellow : #fdab22 */
 
+/* Global Styles */
 :root {
   --main-color: #fdab22;
   --dark-grey: #323232;
   --light-grey: #f7f7f7;
   --text-color: #a3eef0;
 }
-
 body {
   background-color: var(--light-grey);
   color: var(--dark-grey);
@@ -65,7 +65,10 @@ form label {
   padding-top: 0px;
 }
 
-/* Slider styling */
+/* Form & range slider styling */
+.output-text {
+  color: var(--text-color);
+}
 .slider {
   height: 25px;
   -webkit-appearance: none;
@@ -86,11 +89,6 @@ form label {
   border-color: transparent;
   color: transparent;
 }
-
-.output-text {
-  color: var(--text-color);
-}
-
 /* Slider styling for Webkit */
 .slider::-webkit-slider-thumb {
   -webkit-appearance: none;
@@ -120,7 +118,6 @@ form label {
   border-radius: 0;
   border: 0 solid var(--dark-grey);
 }
-
 /* Slider styling for Firefox */
 .slider::-moz-range-thumb {
   border: 1px solid #9b8769;
@@ -140,7 +137,6 @@ form label {
   border-radius: 0px;
   border: 0 solid var(--dark-grey);
 }
-
 /* Slider styling for IE */
 .slider::-ms-thumb {
   margin-top: 1px;
@@ -186,13 +182,11 @@ form label {
   padding-bottom: 25px;
   color: white;
 }
-
 #mood-outputs .container .row .col-md-12 h2 {
   padding: 0px;
   margin: 0px;
   font-size: 48px;
 }
-
 #mood-outputs h2,
 #mood-outputs p {
   text-align: center;
@@ -218,7 +212,6 @@ form label {
   padding-top: 5px;
   margin-bottom: 0px;
 }
-
 .movie-result h4.title {
   font-size: 20px;
   font-weight: 700;
@@ -241,7 +234,6 @@ form label {
   color: #fff;
   text-decoration: underline;
 }
-
 .movie-result .description {
   text-overflow: ellipsis;
   text-align: left !important;
@@ -270,7 +262,6 @@ footer {
   color: var(--main-color);
   font-weight: 700;
 }
-
 #contributors li a:hover {
   text-decoration: none;
 }

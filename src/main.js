@@ -44,7 +44,7 @@ function embedPlaylist(playlistId) {
       >
     </iframe>`);
 }
-
+// Function to change the main color across the stylesheet
 const changeThemeColor = (color, clicked) => {
   let theRules = new Array();
   const styleSheet = document.styleSheets[1];
@@ -72,7 +72,7 @@ $(document).ready(function () {
     $("#valenceOutput").html(constants.inputKeywords[sliderIndex]);
     changeThemeColor(constants.colorArray[sliderIndex], false);
   });
-
+  // Event listener to track the range slider position live
   $("#find").on("click", () => {
     const keyWord = constants.spotifyKeywords[sliderIndex];
     SpotifyService.getPlaylistWithKeyword(keyWord).then(function (data) {
@@ -87,7 +87,7 @@ $(document).ready(function () {
     });
   });
 });
-
+// Functions to get & print out the TasteDive results to the DOM
 function getElements(response) {
   if (response instanceof Error) {
     alert(response);
@@ -95,7 +95,6 @@ function getElements(response) {
     addMovieResults(response.Similar.Results);
   }
 }
-
 function addMovieResults(results) {
   $("#movie-results").empty();
   $("#movie-results").append(`
