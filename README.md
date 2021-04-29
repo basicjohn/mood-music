@@ -13,6 +13,8 @@
 
 Mood Music is a playlist recommendation engine built with Spotify's Web API and TasteDive. It queries a user's mood with a range of emotions from negative to positive and returns a matching Spotify playlist alongside further book and movie recommendations provided by TasteDive. With Mood Music, you can find media that's right for your mood.
 
+This team project was created during Week VII at [Epicodus](https://www.epicodus.com/), a coding bootcamp in Portland, Oregon.
+
 
 ## **Setup/Installation Requirements**
 
