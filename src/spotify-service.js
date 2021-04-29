@@ -33,10 +33,9 @@ export default class SpotifyService {
       }
     )
       .then(function (response) {
-        if (!response) {
+        if (!response.ok) {
           throw new Error(response);
         }
-        //console.log(`response: ${response.body.json()}`);
         return response.json();
       })
       .catch(function (err) {

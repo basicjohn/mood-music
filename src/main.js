@@ -67,7 +67,6 @@ $(document).ready(function () {
   let rangeInput = $("#valenceRange").val();
   $("#valenceOutput").html(constants.inputKeywords[rangeInput]);
   getAuthToken();
-
   $(document).on("input", "#valenceRange", function () {
     sliderIndex = $(this).val() - 1;
     $("#valenceOutput").html(constants.inputKeywords[sliderIndex]);
@@ -83,17 +82,17 @@ $(document).ready(function () {
         changeThemeColor(constants.colorArray[sliderIndex], true);
         makeApiCall(constants.movieMoodTitles[sliderIndex]);
       } else {
-        console.log("Still...WTF!?");
+        alert(data);
       }
     });
   });
 });
 
 function getElements(response) {
-  if (response) {
-    console.log(response);
-  } else {
+  if (response instanceof Error) {
     console.log("Error", response);
+  } else {
+    console.log(response.Similar.Results.random());
   }
 }
 
