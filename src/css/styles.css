@@ -184,9 +184,10 @@ form label {
   color: white;
 }
 
-#mood-outputs h2 {
+#mood-outputs .container .row .col-md-12 h2 {
   padding: 0px;
   margin: 0px;
+  font-size: 48px;
 }
 
 #mood-outputs h2,
@@ -213,7 +214,8 @@ footer {
   margin-right: auto;
 }
 #contributors p {
-  margin: 0px;
+  margin-top: 0px;
+  margin-bottom: 0px;
 }
 
 #contributors li {
