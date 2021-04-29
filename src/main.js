@@ -33,7 +33,7 @@ const getAuthToken = () => {
 function embedPlaylist(playlistId) {
   $(".spotify-player").html("");
   $(".spotify-player").append(`
-    <h3>Set the mood with a playlist</h3>
+    <h3>Music</h3>
     <iframe
       src="https://open.spotify.com/embed/playlist/${playlistId}"
       width="100%"
@@ -90,10 +90,30 @@ $(document).ready(function () {
 
 function getElements(response) {
   if (response instanceof Error) {
-    console.log("Error", response);
+    alert(response);
   } else {
-    console.log(response.Similar.Results);
+    addMovieResults(response.Similar.Results);
   }
+}
+
+function addMovieResults(results) {
+  $("#movie-results").empty();
+  $("#movie-results").append(`
+    <div class="col-md-12">
+    <h3>Movies</h3>
+  </div>`);
+  results.forEach(function (result) {
+    $("#movie-results").append(`<div class="col-md-12 movie-result">
+                <h4 class="title">${result.Name}</h4>
+                <p class="description">${result.wTeaser.substring(
+                  0,
+                  125
+                )}...</p>
+                <h5 class="resource"><a href="${
+                  result.yUrl
+                }">Watch Trailer</a></h5>
+              </div>`);
+  });
 }
 
 async function makeApiCall(movieTitle) {

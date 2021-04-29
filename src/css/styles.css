@@ -62,7 +62,7 @@ form label {
   color: var(--main-color);
 }
 .spotify-player {
-  padding-top: 25px;
+  padding-top: 0px;
 }
 
 /* Slider styling */
@@ -206,7 +206,10 @@ form label {
 .movie-result {
   padding-top: 15px;
 }
-
+.spotify-player h3 {
+  margin-bottom: 20px !important;
+}
+.spotify-player h3,
 .media-recommendations .row h3 {
   border-bottom: #fff;
   border-style: solid;
@@ -240,6 +243,7 @@ form label {
 }
 
 .movie-result .description {
+  text-overflow: ellipsis;
   text-align: left !important;
   margin: 0px;
   padding: 0px 0px 10px 0px;
